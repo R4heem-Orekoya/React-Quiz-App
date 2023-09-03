@@ -38,11 +38,11 @@ function App() {
   return (
     <div className='bg-black flex flex-col items-center justify-center min-h-screen p-[5%] font-poppins'>
       <Routes>
-        <Route path="/" element={<Buttons />} />
-        <Route path="/StartGameNotice" element={<StartGameNotice />} />
-        <Route path="/Highscores" element={<Highscores />} />
-        <Route path="/Questions" element={<Questions />} />
-        <Route path="/Highscores" element={<Highscores />} />
+        <Route path="/React-Quiz-App/" element={<Buttons />} />
+        <Route path="/React-Quiz-App/StartGameNotice" element={<StartGameNotice />} />
+        <Route path="/React-Quiz-App/Highscores" element={<Highscores />} />
+        <Route path="/React-Quiz-App/Questions" element={<Questions />} />
+        {/* <Route path="/React-Quiz-App/Highscores" element={<Highscores />} /> */}
       </Routes>
 
       {/* <Component score={score} setScore={setScore} name={name} setName={setName} highscores={highscores} setHighscore={setHighscore} addScoreToHighscore={addScoreToHighscore} deleteScoreFromHighscore={deleteScoreFromHighscore}/> */}
