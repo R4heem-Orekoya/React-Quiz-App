@@ -4,6 +4,7 @@ import StartGameNotice from './components/StartGameNotice'
 import Questions from './components/QuestionsSection'
 import Highscores from './components/Highscores'
 import { useState, useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   const [score, setScore] = useState(0);
@@ -34,27 +35,17 @@ function App() {
   }
 
 
-
-  let Component = Buttons;
-  switch (window.location.pathname){
-    case '/' :
-      Component = Buttons
-      break
-    case '/StartGameNotice':
-      Component = StartGameNotice
-      break
-    case '/Questions':
-      Component = Questions
-      break
-    case '/Highscores':
-      Component = Highscores
-      break
-  }
-
-
   return (
     <div className='bg-black flex flex-col items-center justify-center min-h-screen p-[5%] font-poppins'>
-      <Component score={score} setScore={setScore} name={name} setName={setName} highscores={highscores} setHighscore={setHighscore} addScoreToHighscore={addScoreToHighscore} deleteScoreFromHighscore={deleteScoreFromHighscore}/>
+      <Routes>
+        <Route path="/" element={<Buttons />} />
+        <Route path="/StartGameNotice" element={<StartGameNotice />} />
+        <Route path="/Highscores" element={<Highscores />} />
+        <Route path="/Questions" element={<Questions />} />
+        <Route path="/Highscores" element={<Highscores />} />
+      </Routes>
+
+      {/* <Component score={score} setScore={setScore} name={name} setName={setName} highscores={highscores} setHighscore={setHighscore} addScoreToHighscore={addScoreToHighscore} deleteScoreFromHighscore={deleteScoreFromHighscore}/> */}
     </div>
   )
 }

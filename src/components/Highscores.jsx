@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import Button from './Button';
 
 export default function Highscores({highscores, deleteScoreFromHighscore}) {
@@ -39,7 +38,7 @@ export default function Highscores({highscores, deleteScoreFromHighscore}) {
                 Clear
             </Button>:''}
 
-            <Button href='/'>
+            <Button to='/'>
                 Back to home
             </Button>
         </div>

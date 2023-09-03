@@ -29,7 +29,7 @@ export default function Lastpage({score, name, setName, addScoreToHighscore}) {
         <p className={warning === false?'self-start tex-md text-red-500 hidden':'self-start tex-md text-red-500'}>Name can't be empty</p>
 
         <div className='flex flex-col gap-4 mt-4'>
-            <Button href={path}
+            <Button to={path}
                 onClick={
                     () => {
                         if(name === ''){
@@ -47,10 +47,10 @@ export default function Lastpage({score, name, setName, addScoreToHighscore}) {
                 Save
             </Button>
 
-            <Button href="/Questions">
+            <Button to="/Questions">
                 Play Again
             </Button>
-            <Button href="/">
+            <Button to="/">
                 Back to home
             </Button>
         </div>

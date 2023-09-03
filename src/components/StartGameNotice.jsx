@@ -1,5 +1,6 @@
 import React from 'react'
 import questionsArray from './questionsArray'
+import { Link } from 'react-router-dom'
 
 export default function StartGameNotice() {
   return (
@@ -11,16 +12,16 @@ export default function StartGameNotice() {
       </p>
 
       <div className='flex gap-4 mx-auto mt-4'>
-        <a href="/">
+        <Link to="/">
             <button className='ring-2 ring-indigo-600 px-6 py-3 text-sm rounded-lg active:scale-95 duration-300'>
                 Go back
             </button>
-        </a>
-        <a href="/Questions">
+        </Link>
+        <Link to="/Questions">
             <button className='bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-sm rounded-lg active:scale-95 duration-300'>
                 Continue
             </button>
-        </a>
+        </Link>
       </div>
     </div>
   )
