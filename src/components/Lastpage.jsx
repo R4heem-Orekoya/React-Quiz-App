@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import questionsArray from './questionsArray'
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 
 
 
-export default function Lastpage({score, name, setName, addScoreToHighscore}) {
+export default function Lastpage({score, setScore, name, setName, addScoreToHighscore}) {
     const [warning, setWarning] = useState(false);
-    const [path, setPath] = useState('/')
+    const [path, setPath] = useState('/React-Quiz-App/')
 
   return (
     <div className='flex flex-col items-center justify-center gap-5'>
@@ -29,30 +30,46 @@ export default function Lastpage({score, name, setName, addScoreToHighscore}) {
         <p className={warning === false?'self-start tex-md text-red-500 hidden':'self-start tex-md text-red-500'}>Name can't be empty</p>
 
         <div className='flex flex-col gap-4 mt-4'>
-            <Button to={path}
-                onClick={
-                    () => {
-                        if(name === ''){
-                            setWarning(true)
-                            setPath('#')
-                            return
+            <a href={path}>
+                <Button 
+                    onClick={
+                        () => {
+                            if(name === ''){
+                                setWarning(true)
+                                setPath('/React-Quiz-App/Questions#')
+                                return
+                            }
+                            else{
+                                setWarning(false)
+                                setPath('/React-Quiz-App/')
+                                addScoreToHighscore()
+                            }
+
+                            setName('')
                         }
-                        else{
-                            setWarning(false)
-                            setPath('/')
-                            addScoreToHighscore()
-                        }
+                    }>
+                    Save
+                </Button>
+            </a>
+
+                <Button 
+                    onClick={()=>{
+                        window.location.reload();
                     }
                 }>
-                Save
-            </Button>
+                    Play Again
+                </Button>
 
-            <Button to="/Questions">
-                Play Again
-            </Button>
-            <Button to="/">
-                Back to home
-            </Button>
+            <Link to="/React-Quiz-App">
+                <Button 
+                    onClick={()=>{
+                        setScore(0)
+                    }
+                }>
+                    Back to home
+                </Button>
+            </Link>
+
         </div>
     </div>
   )

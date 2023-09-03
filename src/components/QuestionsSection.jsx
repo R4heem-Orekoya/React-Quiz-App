@@ -13,7 +13,7 @@ export default function QuestionsSection({ score, setScore, name, setName, addSc
     return (
         <div className='w-[400px] max-w-[100%] text-white'>
             {count === questionsArray.length? 
-                <Lastpage score={score} name={name} setName={setName} addScoreToHighscore={addScoreToHighscore}/>
+                <Lastpage score={score} name={name} setName={setName} setScore={setScore} addScoreToHighscore={addScoreToHighscore}/>
                 : 
                 <Quiz count={count} setCount={setCount} score={score} setScore={setScore} />
             }

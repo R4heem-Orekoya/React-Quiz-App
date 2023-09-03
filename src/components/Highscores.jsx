@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 export default function Highscores({highscores, deleteScoreFromHighscore}) {
     const sortedHighscores = [...highscores].sort((a, b) => b.score - a.score);
@@ -38,9 +39,11 @@ export default function Highscores({highscores, deleteScoreFromHighscore}) {
                 Clear
             </Button>:''}
 
-            <Button to='/'>
-                Back to home
-            </Button>
+            <Link to='/React-Quiz-App'>
+                <Button>
+                    Back to home
+                </Button>
+            </Link>
         </div>
 
     </div>

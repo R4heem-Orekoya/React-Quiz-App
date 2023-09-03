@@ -12,12 +12,12 @@ export default function StartGameNotice() {
       </p>
 
       <div className='flex gap-4 mx-auto mt-4'>
-        <Link to="/">
+        <Link to="/React-Quiz-App">
             <button className='ring-2 ring-indigo-600 px-6 py-3 text-sm rounded-lg active:scale-95 duration-300'>
                 Go back
             </button>
         </Link>
-        <Link to="/Questions">
+        <Link to="/React-Quiz-App/Questions">
             <button className='bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-sm rounded-lg active:scale-95 duration-300'>
                 Continue
             </button>
