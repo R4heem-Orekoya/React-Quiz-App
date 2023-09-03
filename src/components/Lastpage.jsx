@@ -54,7 +54,7 @@ export default function Lastpage({score, setScore, name, setName, addScoreToHigh
 
                 <Button 
                     onClick={()=>{
-                        window.location.reload();
+                        window.location.reload()
                     }
                 }>
                     Play Again
