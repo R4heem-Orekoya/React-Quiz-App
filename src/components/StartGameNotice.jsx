@@ -2,7 +2,7 @@ import React from 'react'
 import questionsArray from './questionsArray'
 import { Link } from 'react-router-dom'
 
-export default function StartGameNotice() {
+export default function StartGameNotice({setScore}) {
   return (
     <div className='flex flex-col bg-gray-900 w-[400px] max-w-[100%] text-center text-white py-5 px-4 rounded-xl'>
       <h1 className='text-3xl font-bold'>Note</h1>
@@ -12,7 +12,7 @@ export default function StartGameNotice() {
       </p>
 
       <div className='flex gap-4 mx-auto mt-4'>
-        <Link to="/React-Quiz-App">
+        <Link to="/React-Quiz-App" onClick={setScore(0)}>
             <button className='ring-2 ring-indigo-600 px-6 py-3 text-sm rounded-lg active:scale-95 duration-300'>
                 Go back
             </button>
